@@ -1,6 +1,6 @@
 # IBRDTN - Dockerfile 🐳
 
-Dockerfile to build a docker image for the Bundle protocol implementation IBRDTN.
+Dockerfile to build a docker image for the Bundle protocol implementation [IBRDTN](https://github.com/ibrdtn/ibrdtn).
 The image use Debian:stretch as base image, the code in this repository was created based on
 the project [fog-over-dtn](https://github.com/tukno/fog-over-dtn/tree/master/Fog%20Node/IBR-DTN).
 
