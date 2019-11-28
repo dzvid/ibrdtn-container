@@ -21,4 +21,4 @@ the project [fog-over-dtn](https://github.com/tukno/fog-over-dtn/tree/master/Fog
 
 ## License
 
-The repository code/resources are [GPLv3 licensed](./LICENSE).
+The repository code/resources are licensed under [Apache 2.0 license](./LICENSE).
