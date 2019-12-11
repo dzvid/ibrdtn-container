@@ -1,7 +1,9 @@
 #!/bin/sh
 
-if [ ! -f /ibrdtn/ibrdtn-default.conf ] ; then
-    mv /ibrdtn-default.conf /ibrdtn/ibrdtn-default.conf
-fi
+set -e
+
+# if [ ! -f /ibrdtn.conf ] ; then
+#     mv /ibrdtn.conf /ibrdtn/config/ibrdtn.conf
+# fi
 
 exec "$@"
