@@ -1,8 +1,5 @@
-FROM debian:stretch-slim 
+FROM debian:stretch-slim
 
-COPY ./ibrdtn/ /build/ibrdtn-repo
-
-#Install dependency packages
 RUN apt-get update && apt-get install -y \
   build-essential git net-tools g++ libpth-dev make dh-autoreconf ca-certificates openssl pkg-config\
   libssl-dev libz-dev libsqlite3-dev \
@@ -13,7 +10,8 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/*
 
 # Build IBRDTN
-RUN cd /build/ibrdtn-repo/ibrdtn \
+RUN git clone https://github.com/ibrdtn/ibrdtn.git build/ibrdtn-repo \
+  && cd /build/ibrdtn-repo/ibrdtn \
   && bash autogen.sh \
   && ./configure --enable-debug \
   && make \
@@ -25,11 +23,10 @@ RUN cd /build/ibrdtn-repo/ibrdtn \
   && rm -rf /build \
   && mkdir -p /ibrdtn/config /ibrdtn/bundles /ibrdtn/log
 
+
+VOLUME [ "/ibrdtn/config", "/ibrdtn/bundles", "/ibrdtn/log" ]
+
 COPY ibrdtn.conf ./ibrdtn/config
-
-VOLUME [ "/ibrdtn/bundles", "/ibrdtn/log" ]
-
-COPY ibrdtn.conf ./ibrdtn/
 
 COPY entrypoint.sh ./
 RUN chmod +x entrypoint.sh
