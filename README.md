@@ -13,7 +13,7 @@ The image use `debian:stretch-slim` as base image. We leverage Github infrastruc
     - If deploying services in a Raspberry Pi, use the following operational system: `Raspberry Pi OS (32-bit) Lite, version August 2020 release date 2020-08-20, kernel version 5.4`; 
   
 ### Usage 
-The docker image build in this repository is disponible at [Docker Hub](https://hub.docker.com/r/dzvid/ibrdtn). The image can be used in following architectures: `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x`.
+The docker image build in this repository is disponible at [Docker Hub](https://hub.docker.com/r/dzvid/ibrdtn). The image can be used in following architectures: `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64`.
 
 To create a docker container run the following command in terminal (assuming that you are using a GNU/Linux host):
 ```bash
@@ -114,8 +114,8 @@ docker run -d -it --name CONTAINER_NAME -v /host-path/ibrdtn.conf:/ibrdtn/config
    - `DOCKERHUB_TOKEN`: The token generated in Docker Hub in step 1;
    - `DOCKERHUB_USERNAME`: Your Docker Hub username.
    
-   3. Select the architectures you want to target in the file `.github/workflows/build-image.yml`. The following architectures are targeted by default: `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x`.
-   4. Push changes to your repository and wait for CI to build and push image to Docker Hub.
+   1. Select the architectures you want to target in the file `.github/workflows/build-image.yml`. The following architectures are targeted by default: `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64`.
+   2. Push changes to your repository and wait for CI to build and push image to Docker Hub.
 
 ### Local Multi-arch build
 For local multi-arch build, please refer to this link: [Getting started with Docker for Arm on Linux](https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/). It has all the instructions necessary to build Docker images for architectures different from the host machine.
