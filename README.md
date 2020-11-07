@@ -109,13 +109,11 @@ docker run -d -it --name CONTAINER_NAME -v /host-path/ibrdtn.conf:/ibrdtn/config
       
    1. Go to your [Docker Hub security settings](https://hub.docker.com/settings/security) to create a new access token:
    ![docker-hub-token](./assets/token.png)
-
    2. After creating the access token, go to your repository settings, and in the `Secrets` section create the following environment variables:
-   - `DOCKERHUB_TOKEN`: The token generated in Docker Hub in step 1;
-   - `DOCKERHUB_USERNAME`: Your Docker Hub username.
-   
-   1. Select the architectures you want to target in the file `.github/workflows/build-image.yml`. The following architectures are targeted by default: `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64`.
-   2. Push changes to your repository and wait for CI to build and push image to Docker Hub.
+      - `DOCKERHUB_TOKEN`: The token generated in Docker Hub in step 1;
+      - `DOCKERHUB_USERNAME`: Your Docker Hub username.
+   3. Select the architectures you want to target in the file `.github/workflows/build-image.yml`. The following architectures are targeted by default: `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64`.
+   4. Push changes to your repository and wait for CI to build and push image to Docker Hub.
 
 ### Local Multi-arch build
 For local multi-arch build, please refer to this link: [Getting started with Docker for Arm on Linux](https://www.docker.com/blog/getting-started-with-docker-for-arm-on-linux/). It has all the instructions necessary to build Docker images for architectures different from the host machine.
