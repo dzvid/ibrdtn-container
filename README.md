@@ -13,7 +13,7 @@ The image use `debian:stretch-slim` as base image. We leverage Github infrastruc
     - If deploying services in a Raspberry Pi, use the following operational system: `Raspberry Pi OS (32-bit) Lite, version August 2020 release date 2020-08-20, kernel version 5.4`; 
   
 ### Usage 
-The docker image build in this repository is disponible at [Docker Hub](https://hub.docker.com/r/dzvid/ibrdtn). The image can be used in following architectures: `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64`.
+The docker image built in this repository is disponible at [Docker Hub](https://hub.docker.com/r/dzvid/ibrdtn). The image can be used in following architectures: `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64`.
 
 To create a docker container run the following command in terminal (assuming that you are using a GNU/Linux host):
 ```bash
